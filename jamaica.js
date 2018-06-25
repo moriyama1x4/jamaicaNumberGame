@@ -1,4 +1,5 @@
-var target = 22;
+var target = 62;
+var org_nums = [1,2,4,5,3];
 var sign = ['+','-','*','/','\\'];
 
 for(var i = 0; i < 4; i++){
@@ -11,7 +12,7 @@ for(var i = 0; i < 4; i++){
 							for(var p = o+1; p < 3; p++){
 								for(var q = 0; q < 5; q++){
 									for(var r = 0; r < 5; r++){
-										var nums = [1,2,4,5,0];
+										var nums = org_nums.concat();
 										var formulas = [];
 										nums.forEach(function(value){
 											formulas.push(value);
@@ -74,17 +75,22 @@ function cal(num1, num2, sign){
 	switch(sign){
 		case 0:
 			return num1 + num2;
+			break;
 		case 1:
 			if(num1 >= num2){
 				return num1 - num2; 
 			}else{
 				return num2 - num1;
 			}
+			break;
 		case 2:
 			return num1 * num2;
+			break;
 		case 3:
 			return num1 / num2;
+			break;
 		case 4:
 			return num2 / num1;
+			break;
 	}
 }
